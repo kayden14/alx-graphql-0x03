@@ -1,10 +1,9 @@
 // pages/_app.tsx
-
-import type { AppProps } from "next/app";
-import ErrorBoundary from '@/components/ErrorBoundary';
+import '../lib/sentry.client.config'; // This line initializes Sentry
+import type { AppProps } from 'next/app';
 import { ApolloProvider } from '@apollo/client';
-import client from '@/lib/apolloClient'; // Adjust path if needed
-import '@/styles/globals.css'; // Optional, if you have global styles
+import client from '@/lib/apolloClient';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
